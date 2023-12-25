@@ -1,0 +1,33 @@
+<!-- projects/templates/projects/project_detail.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>{{ project.title }}</h1>
+<div class="row">
+    <div class="col-md-8">
+        {% if project.image %}
+            <img src="{{ project.image.url }}" width="85%">
+        {% endif %}
+    </div>
+    <div class="col-md-4">
+        <h5>Описание:</h5>
+        <p>{{ project.description }}</p>
+        <br>
+        <h5>Технологии:</h5>
+        <p>{{ project.technology }}</p>
+        {% if project.githublink or project.replitlink or project.anotherlink%}
+            <h5>Полезные ссылки:</h5>
+        {% endif %}   
+        {% if project.githublink %}
+            <a href="{{ project.githublink }}">GitHub</a>
+        {% endif %}
+        {% if project.replitlink %}
+            <a href="{{ project.replitlink }}">Replit</a>
+        {% endif %}
+        {% if project.anotherlink %}
+            <a href="{{ project.anotherlink }}">Ссылка на файлообменник</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock page_content %}

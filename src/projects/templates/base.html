@@ -1,0 +1,38 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} MyBasement {% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <title>Document</title>
+</head>
+<body class="container">
+    {% load static %}
+    <nav class="navbar navbar-light sticky-top" style="background-color: #7893b4;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="{% static 'pages/img/downstairs-svgrepo-com.svg' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+            МойПодвал
+          </a>
+        </div>
+      </nav>
+    {% block page_content %}{% endblock page_content %}
+
+    <!-- Footer -->
+<footer class="bg-light text-center ">
+    <!-- Copyright -->
+    <div class="text-center p-3 fixed-bottom" style="background-color: white;">
+      ©Copyright:
+      <a class="text-dark" href="/">МойПодвал</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+</body>
+</html>
