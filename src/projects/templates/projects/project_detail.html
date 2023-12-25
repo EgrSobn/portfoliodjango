@@ -20,14 +20,15 @@
             <h5>Полезные ссылки:</h5>
         {% endif %}   
         {% if project.githublink %}
-            <a href="{{ project.githublink }}">GitHub</a>
+        Ознакомиться на <a href="{{ project.githublink }}">GitHub</a>
         {% endif %}
         {% if project.replitlink %}
-            <a href="{{ project.replitlink }}">Replit</a>
+            Ознакомиться на <a href="{{ project.replitlink }}">Replit</a>
         {% endif %}
         {% if project.anotherlink %}
             <a href="{{ project.anotherlink }}">Ссылка на файлообменник</a>
         {% endif %}
+        {{ project.image.url }}
     </div>
 </div>
 {% endblock page_content %}
